@@ -19,6 +19,35 @@ def game_over(reason):
   # ask player to play again or not by activating play_again() function
   play_again()
 
+def amougus_room():
+  # some prompts
+  print("\nYou are now in a sus room... the amougus room")
+  print("The imposter is in this room somewhere. You need to vote them out of the room")
+  print("Who would you like to vote out?")
+  print("1). Vote out Pink")
+  print("2). Vote out Red")
+  print("3). Vote out Black")
+  print("4). Vote out Yellow")
+  # take input()
+  answer = input(">")
+
+  if answer == "1":
+    # wrong answer
+    game_over("You voted out a crewmate! Everyone thinks your sus and vote you out")
+  elif answer == "2":
+    # the player won the game
+    print("That was the imposter! The crewmates let you through.")
+    diamond_room()
+  elif answer == "3":
+    # wrong answer
+    game_over("You voted out the only black crewmate! Everyone thinks your racist and vote you out")
+  elif answer == "4":
+    # wrong answer
+    game_over("You voted out a crewmate! Everyone thinks your sus and vote you out")
+  else:
+    # call game_over() with "reason"
+    game_over("Go and learn how to type a number.")
+
 # diamond room
 def diamond_room():
   # some prompts
@@ -95,8 +124,8 @@ def bear_room():
     diamond_room()
     # 69 instant win room
   elif answer == "3":
-    print("\nThe bear is gratefull for your gift of hotpitality. The bear moved from the door.")
-    diamond_room()
+    print("\nThe bear thinks it was a bit sus that you shared honey with him but he's happy for your hospitality.")
+    amougus_room()
   elif answer == "69":
     game_over("AYYYYY YOU AUTOMATICLY WIN BECAUSE OF YOUR SWAGGER")
   else:
